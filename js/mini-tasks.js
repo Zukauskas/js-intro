@@ -1,6 +1,9 @@
 /* Sukurti 3 kintamuosius su skaičiaus tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
  */
+console.log('')
+console.log('#####Skaitiniai kintamieji#####');
+console.log('')
 
 const kebaboKaina = 5;
 console.log(`Kebabo kaina yra ${kebaboKaina} EUR`);
@@ -14,6 +17,9 @@ console.log(`Žemės masė apytikriai ~ ${zemesMase}kg`);
 /* Sukurti 3 kintamuosius su teksto tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
  */
+console.log('')
+console.log('#####Tekstiniai kintamieji#####');
+console.log('')
 
 const kaimynoVardas = 'Jonas';
 console.log('Mano kaimynas yra ' + kaimynoVardas);
@@ -23,3 +29,21 @@ console.log("Praktiški žmonės renkasi už " + geriausiasPrekybosCentras);
 
 const gyvunas = "Katė";
 console.log(`Mano megstamiausias gyvūnas - ${gyvunas}`);
+
+/* 
+Susumuoti visus skaičiaus tipo kintamuosius
+Rezultatą išvesti į console
+ */
+console.log('')
+console.log('#####Skaitiniu kintamuju suma#####');
+console.log('')
+
+const visaSuma = kebaboKaina + traukinioBilietas + zemesMase;
+console.log(visaSuma, "Dont what you ecpected :D");
+
+console.log('')
+console.log('#####Tekstiniai kintamieji kartu#####');
+console.log('')
+
+const visasTekstas = kaimynoVardas + ' ' + geriausiasPrekybosCentras + ' ' + gyvunas
+console.log(visasTekstas)
