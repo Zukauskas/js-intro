@@ -29,7 +29,7 @@ console.log(min,max)
 //Kintamųjų užvadinimas
 
 const vienas = 1;
-const antrasSkaicius = 2;
+const antrasSkaicius = 2; //camelCase
 const PVM = 21;
 
 const a = 5;
@@ -66,8 +66,8 @@ console.log(b, a, liekanaBA);
 
 //laipsnis
 
-const laipsnisAB = a ** b;
-const laipsnisBA = b ** a;
+const laipsnisAB = a ** b; // 5 * 5 * 5 * 5 * 5 * 5 * 5
+const laipsnisBA = b ** a; // 7 * 7 * 7 * 7 * 7
 
 console.log(a, b, laipsnisAB);
 console.log(b, a, laipsnisBA);
