@@ -8,11 +8,11 @@ console.log('')
 const kebaboKaina = 5;
 console.log(`Kebabo kaina yra ${kebaboKaina} EUR`);
 
-const traukinioBilietas = 7.5;
+const traukinioBilietas = 8;
 console.log(`Kelionės kaina Kaunas-Vilnius - ${traukinioBilietas} EUR`);
 
-const zemesMase = 6*10**24;
-console.log(`Žemės masė apytikriai ~ ${zemesMase}kg`);
+const kazkoksSkaicius = 4**10;
+console.log(`Žemės masė apytikriai ~ ${kazkoksSkaicius}kg`);
 
 /* Sukurti 3 kintamuosius su teksto tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
@@ -38,8 +38,8 @@ console.log('')
 console.log('#####Skaitiniu kintamuju suma#####');
 console.log('')
 
-const visaSuma = kebaboKaina + traukinioBilietas + zemesMase;
-console.log(visaSuma, "Dont what you ecpected :D");
+const visaSuma = kebaboKaina + traukinioBilietas + kazkoksSkaicius;
+console.log(visaSuma, "viskas");
 
 console.log('')
 console.log('#####Tekstiniai kintamieji kartu#####');
