@@ -50,4 +50,16 @@ marksSum += marks2[4];
 
 console.log('Marks sum:', marksSum);
 
-console.log(NaN + null)
+const abc = ['a', 'b', 'c', 'd', 'e', 'f'];
+const separator = ', ';
+const ending = '.';
+let abcString = 'Abecele: ';
+
+abcString += abc[0] + separator;
+abcString += abc[1] + separator;
+abcString += abc[2] + separator;
+abcString += abc[3] + separator;
+abcString += abc[4] + separator;
+abcString += abc[5] + ending;
+
+console.log(abcString)
