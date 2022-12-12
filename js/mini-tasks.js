@@ -12,7 +12,7 @@ const traukinioBilietas = 8;
 console.log(`Kelionės kaina Kaunas-Vilnius - ${traukinioBilietas} EUR`);
 
 const kazkoksSkaicius = 4**10;
-console.log(`Žemės masė apytikriai ~ ${kazkoksSkaicius}kg`);
+console.log(`4**10 = ${kazkoksSkaicius}`);
 
 /* Sukurti 3 kintamuosius su teksto tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
