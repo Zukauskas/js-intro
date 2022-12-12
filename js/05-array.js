@@ -1,5 +1,6 @@
 /* 
     ARRAY (list, sąrašas, matrica, matrix, masyvas)
+    "supaprastintas" objektas
 */
 
 const emptyArray = [];
