@@ -15,3 +15,8 @@ console.log(n, nType);
 console.log(s, sType);
 console.log(b, bType);
 
+console.log('-----------------');
+
+const x = '' + 5;
+
+console.log(typeof x);
