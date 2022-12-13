@@ -157,3 +157,145 @@ cityList += lietuvosMiestai[0] + ending;
 console.log(cityList)
 console.log('');
 
+console.clear();
+
+console.log('-------KINTAMUJU PALYGINIMAS--------');
+console.log('Tarpusavyje palyginti skaičiaus tipo kintamuosius:');
+
+const b = 17;
+const d = 24;
+
+if (b > d) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (b < d) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (b === d) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (b !== d) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (b >= d) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (b <= d) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+console.log('----------------------------------');
+console.log('Išvesti teksto tipo kintamųjų ilgius');
+
+
+const carModel = 'Volkswagenas';
+console.log('Car Model:', carModel, 'Length:', carModel.length);
+
+const cityName = "Bangladesh";
+console.log('City Name', cityName, 'Length:', cityName.length);
+
+console.log('');
+
+console.log('Tarpusavyje palyginti teksto tipo kintamųjų ilgius:');
+
+if (carModel.length > cityName.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (carModel.length < cityName.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (carModel.length === cityName.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (carModel.length !== cityName.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (carModel.length >= cityName.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (carModel.length <= cityName.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+console.log('---------------------------------------');
+console.log('Išvesti sąrašo tipo kintamųjų ilgius');
+console.log('Tarpusavyje palyginti sąrašo tipo kintamųjų ilgius:');
+
+
+const menesiai = ['Sausis', 'Kovas', 'Gegužė', 'Liepa', 'Rugsėjis', 'Lapkritis'];
+console.log('Array -', menesiai, 'Ilgis:', menesiai.length);
+console.log('');
+
+const miestai = ['Kaunas', 'Vilnius', 'Klaipėda', 'Šiauliai', 'Panevėžys'];
+console.log('Array -', miestai, 'Ilgis:', miestai.length);
+console.log('');
+
+if (miestai.length > menesiai.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (miestai.length < menesiai.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (miestai.length === menesiai.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (miestai.length !== menesiai.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (miestai.length >= menesiai.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
+
+if (miestai.length <= menesiai.length) {
+    console.log('Pomidoras');
+} else {
+    console.log('Bandykite dar kartą');
+}
