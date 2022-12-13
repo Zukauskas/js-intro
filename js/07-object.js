@@ -80,7 +80,7 @@ console.log(car.brand);
 
 const obj = {
     simple: 'paprasta reikšmė',
-    'child-name': "Johny Boy"
+    'child-name': "Johnny Boy"
 }
 
 console.log(obj.simple);
