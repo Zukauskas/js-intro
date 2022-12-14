@@ -316,7 +316,7 @@ function addNumbersInRange(number1, number2) {
     for (let i = number1; i <= number2; i++) {
         sum += i;
     }
-    console.log(`Adding all numbers in range from ${number1} to ${number2} equals: ${sum}`);
+    console.log(`Adding all numbers in range from ${number1} to ${number2} equals: ${sum}.`);
 }
 
 addNumbersInRange(0, 0);
@@ -355,3 +355,25 @@ function stringReverse(string) {
 stringReverse("kebabas");
 
 console.log("-----------------------------------");
+
+const rangeStart = -18;
+const rangeEnd = 18;
+let dividesBy3 = 0;
+let dividesBy5 = 0;
+let dividesBy7 = 0;
+
+for (let i = rangeStart; i <= rangeEnd; i++) {
+    if (i % 3 === 0) {
+        dividesBy3++;
+    }
+    if (i % 5 === 0) {
+        dividesBy5++;
+    }
+    if (i % 7 === 0) {
+        dividesBy7++;
+    }
+}
+
+console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 3 yra ${dividesBy3} vienetai.`);
+console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 5 yra ${dividesBy5} vienetai.`);
+console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 7 yra ${dividesBy7} vienetai.`);
