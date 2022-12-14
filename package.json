@@ -1,26 +1,27 @@
 {
-  "name": "js-intro",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "shop": "nodemon ./tasks/shop.js",
-    "for": "nodemon ./js/10-for.js",
-    "if": "nodemon ./js/09-if.js",
-    "functions": "nodemon ./js/08-functions.js",
-    "object": "nodemon ./js/07-object.js",
-    "typeof": "nodemon ./js/06-typeof.js",
-    "array": "nodemon ./js/05-array.js",
-    "boolean": "nodemon ./js/04-boolean.js",
-    "mini-tasks": "nodemon ./js/mini-tasks.js",
-    "strings": "nodemon ./js/03-strings.js",
-    "numbers": "nodemon ./js/02-numbers.js",
-    "labas": "nodemon ./js/01-labas.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Tautvydas",
-  "license": "MIT",
-  "devDependencies": {
-    "nodemon": "^2.0.20"
-  }
+    "name": "js-intro",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "function-tasks": "nodemon ./tasks/functions.js",
+        "shop": "nodemon ./tasks/shop.js",
+        "for": "nodemon ./js/10-for.js",
+        "if": "nodemon ./js/09-if.js",
+        "functions": "nodemon ./js/08-functions.js",
+        "object": "nodemon ./js/07-object.js",
+        "typeof": "nodemon ./js/06-typeof.js",
+        "array": "nodemon ./js/05-array.js",
+        "boolean": "nodemon ./js/04-boolean.js",
+        "mini-tasks": "nodemon ./js/mini-tasks.js",
+        "strings": "nodemon ./js/03-strings.js",
+        "numbers": "nodemon ./js/02-numbers.js",
+        "labas": "nodemon ./js/01-labas.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Tautvydas",
+    "license": "MIT",
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
 }

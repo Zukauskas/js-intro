@@ -295,3 +295,63 @@ if (miestai.length <= menesiai.length) {
 } else {
     console.log("Bandykite dar kartą");
 }
+
+console.clear();
+console.log("----------FOR LOOP---------------");
+console.log("");
+
+/* 
+Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
+0 … 0
+0 … 4
+0 … 100
+574 … 815
+-50 … 50
+-70 … 30
+
+ */
+
+function addNumbersInRange(number1, number2) {
+    let sum = 0;
+    for (let i = number1; i <= number2; i++) {
+        sum += i;
+    }
+    console.log(`Adding all numbers in range from ${number1} to ${number2} equals: ${sum}`);
+}
+
+addNumbersInRange(0, 0);
+addNumbersInRange(0, 4);
+addNumbersInRange(0, 100);
+addNumbersInRange(574, 815);
+addNumbersInRange(-50, 50);
+addNumbersInRange(-70, 30);
+
+console.log("-----------------------------------");
+
+/* 
+
+panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
+pvz.: “abcdef” -> “fedcba”
+
+*/
+
+const normalString = "Tautvydas";
+let reversedString = "";
+for (let i = normalString.length - 1; i >= 0; i--) {
+    reversedString += normalString[i];
+}
+console.log("Normal string:", normalString, "Reversed String:", reversedString);
+
+// MAKE IT A FUNCTION
+
+function stringReverse(string) {
+    let reversedString = "";
+    for (let i = string.length - 1; i >= 0; i--) {
+        reversedString += string[i];
+    }
+    return console.log(`Your string: ${string}. Same string reversed: ${reversedString}.`);
+}
+
+stringReverse("kebabas");
+
+console.log("-----------------------------------");
