@@ -349,31 +349,50 @@ function stringReverse(string) {
     for (let i = string.length - 1; i >= 0; i--) {
         reversedString += string[i];
     }
-    return console.log(`Your string: ${string}. Same string reversed: ${reversedString}.`);
+    console.log(`Your string: ${string}. Same string reversed: ${reversedString}.`);
 }
 
 stringReverse("kebabas");
 
 console.log("-----------------------------------");
 
-const rangeStart = -18;
-const rangeEnd = 18;
-let dividesBy3 = 0;
-let dividesBy5 = 0;
-let dividesBy7 = 0;
+console.clear();
+function divideWithoutRemainder357(rangeStart, rangeEnd) {
+    let dividesBy3 = 0;
+    let dividesBy5 = 0;
+    let dividesBy7 = 0;
 
-for (let i = rangeStart; i <= rangeEnd; i++) {
-    if (i % 3 === 0) {
-        dividesBy3++;
-    }
-    if (i % 5 === 0) {
-        dividesBy5++;
-    }
-    if (i % 7 === 0) {
-        dividesBy7++;
+    if (rangeStart <= rangeEnd) {
+        for (let i = rangeStart; i <= rangeEnd; i++) {
+            if (i % 3 === 0) {
+                dividesBy3++;
+            }
+            if (i % 5 === 0) {
+                dividesBy5++;
+            }
+            if (i % 7 === 0) {
+                dividesBy7++;
+            }
+        }
+    } else {
+        for (let i = rangeStart; i >= rangeEnd; i--) {
+            if (i % 3 === 0) {
+                dividesBy3++;
+            }
+            if (i % 5 === 0) {
+                dividesBy5++;
+            }
+            if (i % 7 === 0) {
+                dividesBy7++;
+            }
+        }
+        console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 3 yra ${dividesBy3} vienetai.`);
+        console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 5 yra ${dividesBy5} vienetai.`);
+        console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 7 yra ${dividesBy7} vienetai.`);
     }
 }
 
-console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 3 yra ${dividesBy3} vienetai.`);
-console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 5 yra ${dividesBy5} vienetai.`);
-console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš 7 yra ${dividesBy7} vienetai.`);
+const rangeStart = 18;
+const rangeEnd = -18;
+
+divideWithoutRemainder357(rangeStart, rangeEnd);
