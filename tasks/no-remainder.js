@@ -48,11 +48,11 @@ function validateRange(range) {
     } else if (typeof range[0] !== "number" || typeof range[1] !== "number") {
         console.log(range, "is a bad range. One or both  of the elements is not a NUMBER. Please fix it.");
         return false;
-    } else if (Number.isNaN(range[0]) === true || Number.isNaN(range[1]) === true) {
-        console.log(range, "is a bad range. One or both of the elements is NaN. Please fix it.");
+    } else if (!isFinite(range[0]) || !isFinite(range[1])) {
+        console.log(range, "is a bad range. One or both of the elements not Finite. Please fix it.");
         return false;
-    } else if (Math.abs(range[0]) === Infinity || Math.abs(range[1]) === Infinity) {
-        console.log(range, "is a bad range. One or both of the elements is Infinity. Please fix it.");
+    } else if (range[0] % 1 !== 0 || range[1] % 1 !== 0) {
+        console.log(range, "is a bad range. One or both of the elements not Integer. Please fix it.");
         return false;
     } else {
         return true;
@@ -69,11 +69,11 @@ function validateDividers(dividers) {
         if (typeof dividers[i] !== "number") {
             console.log(dividers[i], "in", dividers, "is a bad divider.It has to be a NUMBER. Please fix it.");
             return false;
-        } else if (Number.isNaN(dividers[i]) === true) {
-            console.log(dividers[i], "in", dividers, "is a bad divider.It cant be NaN. Please fix it.");
+        } else if (!isFinite(dividers[i])) {
+            console.log(dividers[i], "in", dividers, "is a bad divider.It cant be Infinite. Please fix it.");
             return false;
-        } else if (Math.abs(dividers[i]) === Infinity) {
-            console.log(dividers[i], "in", dividers, "is a bad divider.It cant be Infinity. Please fix it.");
+        } else if (dividers[i] % 1 !== 0) {
+            console.log(dividers[i], "in", dividers, "is a bad divider.It have to be Integral. Please fix it.");
             return false;
         }
     }
