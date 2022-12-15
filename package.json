@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "getLetters": "nodemon ./tasks/getTheLetters.js",
         "no-remainder": "nodemon ./tasks/no-remainder.js",
         "function-tasks": "nodemon ./tasks/functions.js",
         "shop": "nodemon ./tasks/shop.js",
