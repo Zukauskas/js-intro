@@ -5,11 +5,11 @@ console.log("--------DIVIDING WITHOUT REMAINDER----------");
 function divideWithoutRemainder(range, dividers) {
     console.log("--------------------------------------------------------------------------------");
 
-    if (!validateRange(range)) {
+    if (!isValidRange(range)) {
         return;
     }
 
-    if (!validateDividers(dividers)) {
+    if (!isValidDividers(dividers)) {
         return;
     }
 
@@ -40,7 +40,7 @@ function divideWithoutRemainder(range, dividers) {
     }
 }
 
-function validateRange(range) {
+function isValidRange(range) {
     console.log("Validating range...");
     if (range.length !== 2) {
         console.log(` [${range}] is a bad range. Only [START, END] , no more, no less. Please fix it.`);
@@ -59,7 +59,7 @@ function validateRange(range) {
     }
 }
 
-function validateDividers(dividers) {
+function isValidDividers(dividers) {
     console.log("Validating dividers...");
     if (dividers.length === 0) {
         console.log(dividers, "There must be at least 1 divider. Please fix it.");
