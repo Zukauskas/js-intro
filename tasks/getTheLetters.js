@@ -21,18 +21,6 @@ priešingu atveju tęsiame darbą
 išrenkame iš nurodyto teksto kas kelintą raidę (pagal antrojo kintamojo žingsnį)
 išrinktas raides sudėti į atskirą kintamąjį, kuris yra teksto tipo
 gražina rezultatą
-TESTAI:
-console.log( isrinktiRaides( “abcdefg”, 2 ) );
-rezultatas: “bdf”
-console.log( isrinktiRaides( “abcdefghijkl”, 3 ) );
-rezultatas: “cfil”
-console.log( isrinktiRaides( “abc”, 0 ) );
-rezultatas: “Antrasis kintamasis turi būti didesnis už nulį.”
-console.log( isrinktiRaides( “abc”, 4 ) );
-rezultatas: “Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.”
-console.log( isrinktiRaides( 1561, 2 ) );
-rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
-
 */
 console.clear();
 function isrinktiRaides(string, whichLetters) {
@@ -51,6 +39,9 @@ function isrinktiRaides(string, whichLetters) {
     if (whichLetters > string.length) {
         return console.log("Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgi");
     }
+    if (whichLetters % 1 !== 0) {
+        return console.log("Antrasis kintamasis turi buti sveikas skaicius");
+    }
     let newString = "";
     for (i = whichLetters - 1; i < string.length; i += whichLetters) {
         newString += string[i];
@@ -59,16 +50,15 @@ function isrinktiRaides(string, whichLetters) {
 }
 
 isrinktiRaides("abcdefg", 2);
-// rezultatas: “bdf”
-
 isrinktiRaides("abcdefghijkl", 3);
-// rezultatas: “cfil”
-
+isrinktiRaides("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", 4);
 isrinktiRaides("abc", 0);
-// rezultatas: “Antrasis kintamasis turi būti didesnis už nulį.”
-
 isrinktiRaides("abc", 4);
-// rezultatas: “Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.”
-
 isrinktiRaides(1561, 2);
-// rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
+isrinktiRaides("Infinity", NaN);
+isrinktiRaides(Infinity, "NaN");
+isrinktiRaides(NaN, 5);
+isrinktiRaides("Infinity", 2.5);
+isrinktiRaides("Infinity", null);
+isrinktiRaides(null, "NaN");
+isrinktiRaides("Infinity", -5);
