@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "dalyba": "nodemon ./tasks/dalyba.js",
         "getLetters": "nodemon ./tasks/getTheLetters.js",
         "no-remainder": "nodemon ./tasks/no-remainder.js",
         "function-tasks": "nodemon ./tasks/functions.js",

@@ -57,6 +57,7 @@ isrinktiRaides("abc", 4);
 isrinktiRaides(1561, 2);
 isrinktiRaides("Infinity", NaN);
 isrinktiRaides(Infinity, "NaN");
+isrinktiRaides("Infinity", Infinity);
 isrinktiRaides(NaN, 5);
 isrinktiRaides("Infinity", 2.5);
 isrinktiRaides("Infinity", null);
