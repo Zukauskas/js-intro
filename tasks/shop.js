@@ -22,7 +22,7 @@ function shop(products, currency) {
     console.log("MUSU PARDUOTUVE");
     console.log("----------------");
     for (let i = 0; i < products.length; i++) {
-        console.log(` 1) ${products[i].name} kainuoja ${products[i].price.toFixed(2)} ${currency} ir turime jų ${products[i].inStock} vienetų.`);
+        console.log(` ${i + 1}) ${products[i].name} kainuoja ${products[i].price.toFixed(2)} ${currency} ir turime jų ${products[i].inStock} vienetų.`);
         totalValue += products[i].price * products[i].inStock;
     }
     console.log("------------------------");
