@@ -296,62 +296,119 @@
 //     console.log("Bandykite dar kartą");
 // }
 
-// console.clear();
-// console.log("----------FOR LOOP---------------");
-// console.log("");
+console.clear();
+console.log("----------FOR LOOP---------------");
+console.log("");
 
-// /*
-// Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
-// 0 … 0
-// 0 … 4
-// 0 … 100
-// 574 … 815
-// -50 … 50
-// -70 … 30
+/*
+Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
+0 … 0
+0 … 4
+0 … 100
+574 … 815
+-50 … 50
+-70 … 30
 
-//  */
+ */
 
-// function addNumbersInRange(number1, number2) {
-//     let sum = 0;
-//     for (let i = number1; i <= number2; i++) {
-//         sum += i;
-//     }
-//     console.log(`Adding all numbers in range from ${number1} to ${number2} equals: ${sum}.`);
-// }
+function addNumbersInRange(number1, number2) {
+    //parametru validacija
+    if (typeof number1 !== "number") {
+        return console.log("ERROR - pirmasis parametras nera skaicius");
+    }
 
-// addNumbersInRange(0, 0);
-// addNumbersInRange(0, 4);
-// addNumbersInRange(0, 100);
-// addNumbersInRange(574, 815);
-// addNumbersInRange(-50, 50);
-// addNumbersInRange(-70, 30);
+    if (typeof number2 !== "number") {
+        return console.log("ERROR - antras parametras nera skaicius");
+    }
 
-// console.log("-----------------------------------");
+    if (!isFinite(number1)) {
+        return console.log("ERROR - pirmasis parametras turi buti normalus skaicius");
+    }
 
-// /*
+    if (!isFinite(number2)) {
+        return console.log("ERROR - antras parametras turi buti normalus skaicius");
+    }
 
-// panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
-// pvz.: “abcdef” -> “fedcba”
+    if (number1 % 1 !== 0) {
+        return console.log("ERROR - pirmasis parametras turi buti sveikas skaicius");
+    }
 
-// */
+    if (number2 % 1 !== 0) {
+        return console.log("ERROR - antras parametras turi buti sveikas skaicius");
+    }
 
-// const normalString = "Tautvydas";
-// let reversedString = "";
-// for (let i = normalString.length - 1; i >= 0; i--) {
-//     reversedString += normalString[i];
-// }
-// console.log("Normal string:", normalString, "Reversed String:", reversedString);
+    //LOGIKA
+    let sum = 0;
+    if (number1 < number2) {
+        for (let i = number1; i <= number2; i++) {
+            sum += i;
+        }
+    }
 
-// // MAKE IT A FUNCTION
+    if (number1 > number2) {
+        for (let i = number2; i <= number1; i++) {
+            sum += i;
+        }
+    }
 
-// function stringReverse(string) {
-//     let reversedString = "";
-//     for (let i = string.length - 1; i >= 0; i--) {
-//         reversedString += string[i];
-//     }
-//     console.log(`Your string: ${string}. Same string reversed: ${reversedString}.`);
-// }
+    if (number1 === number2) {
+        sum += number1;
+    }
 
-// stringReverse("kebabas");
+    console.log(`Adding all numbers in range from ${number1} to ${number2} equals: ${sum}.`);
+}
 
-// console.log("-----------------------------------");
+addNumbersInRange(0, 0);
+addNumbersInRange(0, 4);
+addNumbersInRange(0, 100);
+addNumbersInRange(574, 815);
+addNumbersInRange(-50, 50);
+addNumbersInRange(-70, 30);
+
+console.log("--------REVERSED RANGE--------");
+
+addNumbersInRange(0, 0);
+addNumbersInRange(4, 0);
+addNumbersInRange(100, 0);
+addNumbersInRange(815, 574);
+addNumbersInRange(50, -50);
+addNumbersInRange(30, -70);
+
+console.log("----------------INVALID RANGES-------------------");
+addNumbersInRange("Labas", 10);
+addNumbersInRange(10, "Labas");
+addNumbersInRange("Labas", "rytas");
+addNumbersInRange(2.5, 10);
+addNumbersInRange(Infinity, 10);
+addNumbersInRange(NaN, 10);
+addNumbersInRange(10, null);
+
+console.log("--------------------------------");
+
+/*
+
+panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
+pvz.: “abcdef” -> “fedcba”
+
+*/
+
+const normalString = "Tautvydas";
+let reversedString = "";
+for (let i = normalString.length - 1; i >= 0; i--) {
+    reversedString += normalString[i];
+}
+console.log("Normal string:", normalString, "Reversed String:", reversedString);
+
+// MAKE IT A FUNCTION
+
+function stringReverse(string) {
+    let reversedString = "";
+    for (let i = string.length - 1; i >= 0; i--) {
+        reversedString += string[i];
+    }
+    console.log(`Your string: ${string}. Same string reversed: ${reversedString}.`);
+}
+
+stringReverse("kebabas");
+
+console.log("-----------------------------------");
