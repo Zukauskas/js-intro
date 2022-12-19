@@ -17,27 +17,37 @@ function divideWithoutRemainder(range, dividers) {
     let rangeEnd = range[1];
     let timesDivides = 0;
 
-    if (rangeStart <= rangeEnd) {
-        for (let j = 0; j < dividers.length; j++) {
-            for (let i = rangeStart; i <= rangeEnd; i++) {
-                if (i % dividers[j] === 0) {
-                    timesDivides++;
-                }
-            }
+    for (let j = 0; j < dividers.length; j++) {
+        if (rangeStart % dividers[j] === 0) {
+            timesDivides = Math.floor(rangeEnd / dividers[j]) - Math.floor(rangeStart / dividers[j]) + 1;
             console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš ${dividers[j]} yra ${timesDivides} vienetai.`);
-            timesDivides = 0;
-        }
-    } else {
-        for (let j = 0; j < dividers.length; j++) {
-            for (let i = rangeStart; i >= rangeEnd; i--) {
-                if (i % dividers[j] === 0) {
-                    timesDivides++;
-                }
-            }
+        } else {
+            timesDivides = Math.floor(rangeEnd / dividers[j]) - Math.floor(rangeStart / dividers[j]);
             console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš ${dividers[j]} yra ${timesDivides} vienetai.`);
-            timesDivides = 0;
         }
     }
+
+    // if (rangeStart <= rangeEnd) {
+    //     for (let j = 0; j < dividers.length; j++) {
+    //         for (let i = rangeStart; i <= rangeEnd; i++) {
+    //             if (i % dividers[j] === 0) {
+    //                 timesDivides++;
+    //             }
+    //         }
+    //         console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš ${dividers[j]} yra ${timesDivides} vienetai.`);
+    //         timesDivides = 0;
+    //     }
+    // } else {
+    //     for (let j = 0; j < dividers.length; j++) {
+    //         for (let i = rangeStart; i >= rangeEnd; i--) {
+    //             if (i % dividers[j] === 0) {
+    //                 timesDivides++;
+    //             }
+    //         }
+    //         console.log(`Skaičių intervale tarp ${rangeStart} ir ${rangeEnd}, besidalijančių be liekanos iš ${dividers[j]} yra ${timesDivides} vienetai.`);
+    //         timesDivides = 0;
+    //     }
+    // }
 }
 function isValidRange(range) {
     console.log("Validating range...");
@@ -78,8 +88,8 @@ function isValidDividers(dividers) {
 
 const range1 = [0, 11];
 const range2 = [8, 31];
-const range3 = [-15, 15];
-const dividers = [10, 5, 7];
+const range3 = [-18, -15];
+const dividers = [3, 5, 7];
 divideWithoutRemainder(range1, dividers);
 divideWithoutRemainder(range2, dividers);
 divideWithoutRemainder(range3, dividers);
