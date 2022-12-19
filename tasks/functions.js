@@ -105,9 +105,12 @@ function biggestNumber(numbersArray) {
     if (numbersArray.length < 1) {
         return "KLAIDA: masyvas negali buti tuscias";
     }
+    let biggest = 0;
+    for (let i = 0; i < numbersArray.length; i++) {
+        if (!isFinite(numbersArray[i]) || typeof numbersArray[i] !== "number") {
+            continue;
+        }
 
-    let biggest = numbersArray[0];
-    for (let i = 1; i < numbersArray.length; i++) {
         if (biggest < numbersArray[i]) {
             biggest = numbersArray[i];
         }
@@ -115,14 +118,14 @@ function biggestNumber(numbersArray) {
     return biggest;
 }
 
-console.log(biggestNumber("pomidoras"));
-console.log(biggestNumber(true));
-console.log(biggestNumber());
-console.log(biggestNumber(5));
-console.log(biggestNumber(function () {}));
-console.log(biggestNumber(null));
-console.log(biggestNumber({}));
-console.log(biggestNumber([]));
+// console.log(biggestNumber("pomidoras"));
+// console.log(biggestNumber(true));
+// console.log(biggestNumber());
+// console.log(biggestNumber(5));
+// console.log(biggestNumber(function () {}));
+// console.log(biggestNumber(null));
+// console.log(biggestNumber({}));
+// console.log(biggestNumber([]));
 
 console.log(biggestNumber([0]), "-->", 0);
 console.log(biggestNumber([1, 2, 3]), "-->", 3);
