@@ -392,23 +392,50 @@ pvz.: “abcdef” -> “fedcba”
 
 */
 
-const normalString = "Tautvydas";
-let reversedString = "";
-for (let i = normalString.length - 1; i >= 0; i--) {
-    reversedString += normalString[i];
-}
-console.log("Normal string:", normalString, "Reversed String:", reversedString);
+// const normalString = "Tautvydas";
+// let reversedString = "";
+// for (let i = normalString.length - 1; i >= 0; i--) {
+//     reversedString += normalString[i];
+// }
+// console.log("Normal string:", normalString, "Reversed String:", reversedString);
+console.clear();
 
 // MAKE IT A FUNCTION
 
 function stringReverse(string) {
-    let reversedString = "";
-    for (let i = string.length - 1; i >= 0; i--) {
-        reversedString += string[i];
+    if (typeof string !== "string") {
+        return `KLAIDA: Duok string, o ne ${typeof string}`;
     }
-    console.log(`Your string: ${string}. Same string reversed: ${reversedString}.`);
+
+    let reversedString = "";
+
+    // 1) eiti is teksto galo, imti simboli ir lipdyti nauja teksta
+    // for (let i = string.length - 1; i >= 0; i--) {
+    //     reversedString += string[i];
+    // }
+    // return reversedString;
+
+    // // 2) eiti is teksto priekio, imti simboli is galo
+    // for (let i = 0; i < string.length; i++) {
+    //     reversedString += string[string.length - 1 - i];
+    // }
+    // return reversedString;
+
+    // 3) eiti is teksto priekio, imti simboli is priekio
+    for (let i = 0; i < string.length; i++) {
+        reversedString = string[i] + reversedString;
+    }
+    return reversedString;
 }
 
-stringReverse("kebabas");
+//TESTAI
+console.log(stringReverse("azerty"));
+console.log(stringReverse("qwrty"));
+// console.log(stringReverse(12345));
+// console.log(stringReverse(Infinity));
+// console.log(stringReverse(""));
+// console.log(stringReverse(true));
+// console.log(stringReverse([5]));
+// console.log(stringReverse(function () {}));
 
 console.log("-----------------------------------");
