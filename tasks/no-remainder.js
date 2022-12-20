@@ -15,6 +15,11 @@ function divideWithoutRemainder(range, dividers) {
 
     let rangeStart = range[0];
     let rangeEnd = range[1];
+
+    if (rangeStart > rangeEnd) {
+        [rangeStart, rangeEnd] = [rangeEnd, rangeStart];
+    }
+
     let timesDivides = 0;
 
     for (let j = 0; j < dividers.length; j++) {
@@ -88,7 +93,7 @@ function isValidDividers(dividers) {
 
 const range1 = [0, 11];
 const range2 = [8, 31];
-const range3 = [-18, -15];
+const range3 = [18, -18];
 const dividers = [3, 5, 7];
 divideWithoutRemainder(range1, dividers);
 divideWithoutRemainder(range2, dividers);
