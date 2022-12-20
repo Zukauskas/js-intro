@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "ternary": "nodemon ./js/11-ternary.js",
         "polishAlphabet": "nodemon ./codewars/polishAlphabet.js",
         "arrayMadness": "nodemon ./codewars/arrayMadness.js",
         "dalyba": "nodemon ./tasks/dalyba.js",
