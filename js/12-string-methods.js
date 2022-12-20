@@ -17,6 +17,7 @@ console.log("#CHARAT");
 console.log("-------------------");
 
 console.log("Petras".charAt(0));
+console.log("Petras".at(-1));
 
 console.log(" ");
 console.log("#INCLUDE");
