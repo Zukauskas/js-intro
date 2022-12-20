@@ -97,6 +97,21 @@ console.log("");
 // // rezultatas: “Pateikta netinkamo tipo reikšmė.”
 
 console.log("--------------------------------------");
+/* 
+Pirmas skaicius:
+    isFinite
+    yra typeof === "number"
+
+*/
+
+function isValidNumber(numbersArray) {
+    for (let i = 0; i < numbersArray.length; i++) {
+        if (typeof numbersArray[i] === "number" && isFinite(numbersArray[i])) {
+            return numbersArray[i];
+        }
+    }
+    return "KLAIDA: Masyve nėra tinkamų skaičių";
+}
 
 function biggestNumber(numbersArray) {
     if (!Array.isArray(numbersArray)) {
@@ -105,7 +120,9 @@ function biggestNumber(numbersArray) {
     if (numbersArray.length < 1) {
         return "KLAIDA: masyvas negali buti tuscias";
     }
-    let biggest = 0;
+
+    let biggest = isValidNumber(numbersArray);
+
     for (let i = 0; i < numbersArray.length; i++) {
         if (!isFinite(numbersArray[i]) || typeof numbersArray[i] !== "number") {
             continue;
@@ -118,14 +135,14 @@ function biggestNumber(numbersArray) {
     return biggest;
 }
 
-// console.log(biggestNumber("pomidoras"));
-// console.log(biggestNumber(true));
-// console.log(biggestNumber());
-// console.log(biggestNumber(5));
-// console.log(biggestNumber(function () {}));
-// console.log(biggestNumber(null));
-// console.log(biggestNumber({}));
-// console.log(biggestNumber([]));
+console.log(biggestNumber("pomidoras"));
+console.log(biggestNumber(true));
+console.log(biggestNumber());
+console.log(biggestNumber(5));
+console.log(biggestNumber(function () {}));
+console.log(biggestNumber(null));
+console.log(biggestNumber({}));
+console.log(biggestNumber([]));
 
 console.log(biggestNumber([0]), "-->", 0);
 console.log(biggestNumber([1, 2, 3]), "-->", 3);
