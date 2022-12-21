@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "loops": "nodemon ./js/16-loops.js",
         "rest": "nodemon ./js/15-rest.js",
         "spread": "nodemon ./js/14-spread.js",
         "arrows": "nodemon ./js/13-arrows.js",
