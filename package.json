@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "mexicanWave": "nodemon ./codewars/mexicanWave.js",
         "spread": "nodemon ./js/14-spread.js",
         "arrows": "nodemon ./js/13-arrows.js",
         "string-methods": "nodemon ./js/12-string-methods.js",
