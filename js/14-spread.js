@@ -32,7 +32,7 @@ const car = {
 const { color, model } = car;
 console.log(color, model);
 
-// SPREAD
+// SPREAD - išrašymas/iškopijavimas
 
 const numbers = [1, 2, 3, 4, 5];
 const numbers2 = [...numbers, ...numbers];
@@ -59,3 +59,34 @@ const person2 = { ...person, car: { ...car, price: 100000 }, happy: true };
 
 console.log(person2);
 console.log(person2.car.brand);
+
+console.clear();
+
+const a = ["a", "aa"];
+const b = ["b", "bb"];
+const c = ["c", "cc"];
+
+const doubleABC = [...a, 111, ...b, ...c];
+const doubleCBA = [...c, ...b, 222, ...a];
+console.log(doubleABC);
+console.log(doubleCBA);
+
+const oa = { a: "a", aa: "aa" };
+const ob = { b: "b", bb: "bb" };
+const oc = { c: "c", cc: "cc" };
+
+const oABC = { ...oa, ...ob, gg: "gg", ...oc, cc: "nebe CC" };
+console.log(oABC);
+console.log(oABC.cc);
+console.log(oABC.gg);
+
+const user = {
+    name: "Username",
+    password: "password123",
+};
+
+const user2 = { ...user, name: "Petras" };
+
+console.log(user);
+console.log(user2);
+console.log(user2.name);
