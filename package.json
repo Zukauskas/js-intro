@@ -11,6 +11,7 @@
         "arrows": "nodemon ./js/13-arrows.js",
         "string-methods": "nodemon ./js/12-string-methods.js",
         "ternary": "nodemon ./js/11-ternary.js",
+        "countLetters": "nodemon ./codewars/countLettersInString.js",
         "mexicanWave": "nodemon ./codewars/mexicanWave.js",
         "polishAlphabet": "nodemon ./codewars/polishAlphabet.js",
         "arrayMadness": "nodemon ./codewars/arrayMadness.js",
