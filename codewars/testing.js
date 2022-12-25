@@ -42,7 +42,7 @@ function isTriangle(a, b, c) {
 console.log(isTriangle(11, 2, 2), true);
 console.log(isTriangle(7, 20, 2), false);
  */
-console.clear();
+/* console.clear();
 function diamond(n) {
     if (n % 2 === 0 || n < 1) {
         return null;
@@ -57,3 +57,20 @@ function diamond(n) {
 }
 
 console.log(diamond(99));
+ */
+/* 
+console.clear();
+function nbDig(n, d) {
+    const reg = new RegExp(`${d}`, "g");
+    let numArr = [...Array(n + 1).keys()]
+        .map((a) => "" + a * a)
+        .join("")
+        .match(reg).length;
+    return numArr;
+}
+
+console.log(nbDig(5750, 0), 4700, "n = 5750, d = 0"); */
+// console.log(nbDig(11011, 2), 9481, "n = 11011, d = 2");
+
+let string = "PAR1S";
+console.log(string.split("").map((a) => (a === "0" ? "O" : a === "1" ? "I" : a === "5" ? "S" : a)));
