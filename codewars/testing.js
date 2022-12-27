@@ -108,4 +108,6 @@ console.log(string.split("").map((a) => (a === "0" ? "O" : a === "1" ? "I" : a =
     return onlyString + newNum
   }
 
-  console.log(incrementString("foo00999")) */
+  console.log(incrementString("foo00999")) 
+
+ */
