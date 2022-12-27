@@ -14,6 +14,7 @@
         "string-methods": "nodemon ./js/12-string-methods.js",
         "ternary": "nodemon ./js/11-ternary.js",
         "testing": "nodemon ./codewars/testing.js",
+        "makeDiamond": "nodemon ./codewars/makeADiamond.js",
         "countLetters": "nodemon ./codewars/countLettersInString.js",
         "mexicanWave": "nodemon ./codewars/mexicanWave.js",
         "polishAlphabet": "nodemon ./codewars/polishAlphabet.js",
