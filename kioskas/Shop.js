@@ -14,12 +14,23 @@ class Shop {
     console.log(`Items for sale at "${this.name}":`);
     console.log("====================");
     for (const [index, product] of inventory.entries()) {
-      console.log(
-        `${index + 1}) ${
-          product.productName.slice(0, 1).toUpperCase() +
-          product.productName.slice(1).toLowerCase()
-        } - ${(product.productPrice / 100).toFixed(2)} ${this.currency};`
-      );
+      if (product["availability"] === false) {
+        console.log(
+          `${index + 1}) ${
+            product.productName.slice(0, 1).toUpperCase() +
+            product.productName.slice(1).toLowerCase()
+          } - ${(product.productPrice / 100).toFixed(2)} ${
+            this.currency
+          } - Sold out;`
+        );
+      } else {
+        console.log(
+          `${index + 1}) ${
+            product.productName.slice(0, 1).toUpperCase() +
+            product.productName.slice(1).toLowerCase()
+          } - ${(product.productPrice / 100).toFixed(2)} ${this.currency} ;`
+        );
+      }
     }
     console.log("====================");
   }
