@@ -51,12 +51,23 @@ class Shop {
     const newCart = {
       owner: name,
       items: [],
+      status: "Unpaid",
     };
     carts.push(newCart);
     console.log(`${name} have an open cart at "${this.name}"`);
   }
 
   addItemToCart(owner, productID, amount) {
+    for (const cart of carts) {
+      if (cart.owner === owner && cart["status"] === "Paid") {
+        return console.log("You can not add items to already paid cart!");
+      }
+    }
+    for (const [index, product] of inventory.entries()) {
+      if (index === productID - 1 && product.availability === false) {
+        return console.log("Item is out of stock");
+      }
+    }
     let productOrder = { id: productID, count: amount };
     for (const cart of carts) {
       if (cart.owner === owner) {
@@ -78,22 +89,17 @@ class Shop {
     for (const cart of carts) {
       if (cart.owner === owner) {
         for (const item of cart.items) {
-          if (inventory[item["availability"]] === true) {
-            cartValue += inventory[item.id - 1].productPrice * item.count;
-          } else {
-            console.log(
-              `Item with ID ${inventory[item.id]} is no longer available`
-            );
-          }
-          cart["totalToPay"] = cartValue;
+          cartValue += inventory[item.id - 1].productPrice * item.count;
         }
+        cart["totalToPay"] = cartValue;
       }
-
-      console.log(
-        `${owner} order: ${(cartValue / 100).toFixed(2)} ${this.currency}.`
-      );
     }
+
+    console.log(
+      `${owner} order: ${(cartValue / 100).toFixed(2)} ${this.currency}.`
+    );
   }
+
   removeItem(item) {
     for (const product of inventory) {
       if (product.productName === item) {
@@ -102,7 +108,56 @@ class Shop {
     }
   }
 
-  pay(owner, money) {}
+  pay(owner, money) {
+    for (const cart of carts) {
+      if (cart.owner === owner && cart.totalToPay > money) {
+        return console.log("Need more money!");
+      }
+      if (cart.owner === owner && cart.totalToPay < money) {
+        const change = money - cart.totalToPay;
+        cart["status"] = "Paid";
+        return console.log(
+          `Here is your ${(change / 100).toFixed(2)} ${
+            this.currency
+          } change!\nThank you for purchasing at "${this.name}"!`
+        );
+      }
+      if (cart.owner === owner && cart.totalToPay === money) {
+        cart["status"] = "Paid";
+        return console.log(`Thank you for purchasing at "${this.name}"!`);
+      }
+    }
+  }
+
+  shopSummary() {
+    let itemsSold = 0;
+    let ordersCompleted = 0;
+    let ordersInProgress = 0;
+    let profit = 0;
+    let possibleProfit = 0;
+    for (const cart of carts) {
+      if (cart["status"] === "Paid") {
+        for (const item of cart.items) {
+          itemsSold += item.count;
+        }
+        profit += cart["totalToPay"];
+        ordersCompleted++;
+      } else {
+        possibleProfit += cart["totalToPay"];
+        ordersInProgress++;
+      }
+    }
+    console.log(`Summary for the "${this.name}"`);
+    console.log("====================");
+    console.log("Items sold:", itemsSold);
+    console.log("Orders completed:", ordersCompleted);
+    console.log("Orders in progress:", ordersInProgress);
+    console.log(`Profit: ${(profit / 100).toFixed(2)} ${this.currency}`);
+    console.log(
+      `Possible profit: ${(possibleProfit / 100).toFixed(2)} ${this.currency}`
+    );
+    console.log("====================");
+  }
 }
 let carts = [];
 let inventory = [];
