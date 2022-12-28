@@ -1,11 +1,18 @@
 console.clear();
 
-import Student from "./Student.js";
+import { Student } from "./Student.js";
 
 const petras = new Student("Petras", 2000);
-const maryte = new Student("Maryte", 1980);
 
-console.log(petras);
-console.log(petras.name, petras.marks);
-console.log(maryte);
-console.log(maryte.name, maryte.marks);
+petras.addMark(10);
+petras.addMark(2);
+petras.addMark(4);
+petras.addMark(22);
+petras.addMark(3.14);
+petras.addMark(0);
+petras.addMark(-22);
+petras.addMark(-3.14);
+petras.addMark(8);
+petras.addMark(6);
+
+console.log(petras.name, petras.marksAverage());
