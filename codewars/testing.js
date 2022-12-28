@@ -111,3 +111,13 @@ console.log(string.split("").map((a) => (a === "0" ? "O" : a === "1" ? "I" : a =
   console.log(incrementString("foo00999")) 
 
  */
+
+function oddCount(n) {
+  if (!isFinite(n)) {
+    return 0;
+  }
+  console.log(n);
+  return Array.from({ length: n }).filter((a) => a % 2 !== 0);
+}
+
+console.log(oddCount(7102150311246421));
