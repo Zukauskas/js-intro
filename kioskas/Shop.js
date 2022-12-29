@@ -2,6 +2,8 @@ class Shop {
   constructor(name, currency) {
     this.name = name;
     this.currency = currency;
+    this.inventory = [];
+    this.carts = [];
   }
 
   intro() {
@@ -13,7 +15,7 @@ class Shop {
   items() {
     console.log(`Items for sale at "${this.name}":`);
     console.log("====================");
-    for (const [index, product] of inventory.entries()) {
+    for (const [index, product] of this.inventory.entries()) {
       if (product["availability"] === false) {
         console.log(
           `${index + 1}) ${
@@ -41,7 +43,7 @@ class Shop {
       productPrice: price,
       availability: true,
     };
-    inventory.push(newProduct);
+    this.inventory.push(newProduct);
 
     console.log(
       `"${this.name}" sells ${name} for ${(price / 100).toFixed(2)} ${
@@ -51,7 +53,7 @@ class Shop {
   }
 
   updatePrice(name, price) {
-    for (const product of inventory) {
+    for (const product of this.inventory) {
       if (product.productName === name) {
         product.productPrice = price;
       }
@@ -64,23 +66,23 @@ class Shop {
       items: [],
       status: "Unpaid",
     };
-    carts.push(newCart);
+    this.carts.push(newCart);
     console.log(`${name} have an open cart at "${this.name}"`);
   }
 
   addItemToCart(owner, productID, amount) {
-    for (const cart of carts) {
+    for (const cart of this.carts) {
       if (cart.owner === owner && cart["status"] === "Paid") {
         return console.log("You can not add items to already paid cart!");
       }
     }
-    for (const [index, product] of inventory.entries()) {
+    for (const [index, product] of this.inventory.entries()) {
       if (index === productID - 1 && product.availability === false) {
         return console.log("Item is out of stock");
       }
     }
     let productOrder = { id: productID, count: amount };
-    for (const cart of carts) {
+    for (const cart of this.carts) {
       if (cart.owner === owner) {
         cart.items.push(productOrder);
       }
@@ -88,7 +90,7 @@ class Shop {
   }
 
   order(owner) {
-    for (const cart of carts) {
+    for (const cart of this.carts) {
       if (cart.owner === owner) {
         console.log(cart);
       }
@@ -97,10 +99,10 @@ class Shop {
 
   orderPrice(owner) {
     let cartValue = 0;
-    for (const cart of carts) {
+    for (const cart of this.carts) {
       if (cart.owner === owner) {
         for (const item of cart.items) {
-          cartValue += inventory[item.id - 1].productPrice * item.count;
+          cartValue += this.inventory[item.id - 1].productPrice * item.count;
         }
         cart["totalToPay"] = cartValue;
       }
@@ -112,7 +114,7 @@ class Shop {
   }
 
   removeItem(item) {
-    for (const product of inventory) {
+    for (const product of this.inventory) {
       if (product.productName === item) {
         product["availability"] = false;
       }
@@ -120,7 +122,7 @@ class Shop {
   }
 
   pay(owner, money) {
-    for (const cart of carts) {
+    for (const cart of this.carts) {
       if (cart.owner === owner && cart.totalToPay > money) {
         return console.log("Need more money!");
       }
@@ -146,7 +148,7 @@ class Shop {
     let ordersInProgress = 0;
     let profit = 0;
     let possibleProfit = 0;
-    for (const cart of carts) {
+    for (const cart of this.carts) {
       if (cart["status"] === "Paid") {
         for (const item of cart.items) {
           itemsSold += item.count;
@@ -170,7 +172,4 @@ class Shop {
     console.log("====================");
   }
 }
-let carts = [];
-let inventory = [];
-
 export { Shop };
