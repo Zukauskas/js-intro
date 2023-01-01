@@ -32,8 +32,13 @@ class Artist {
 	}
 
 	playSong(songPlace){
-
-	
+		for (const [index,song] of this.songList.entries()){
+			if (index === songPlace){
+				song.timesPlayed++ 
+			}
+		
+		}
+			
 	}
 }
 

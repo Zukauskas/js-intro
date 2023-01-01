@@ -23,19 +23,19 @@ console.log(raimonda.playlist());
 // 3. Oj lijo lijo (0)
 // 4. Kai grazumo (0)
 
-console.log(raimonda.playSong(0));
+raimonda.playSong(0);
 // Playing song: Bumciki.
-console.log(raimonda.playSong(0));
+raimonda.playSong(0);
 // Playing song: Bumciki.
-console.log(raimonda.playSong(1));
+raimonda.playSong(1);
 // Playing song: Tra lia lai.
-console.log(raimonda.playSong(2));
+raimonda.playSong(2);
 // Playing song: Oj lijo lijo.
-console.log(raimonda.playSong(0));
+raimonda.playSong(0);
 // Playing song: Bumciki.
-console.log(raimonda.playSong(3));
+raimonda.playSong(3);
 // Playing song: Kai grazumo.
-console.log(raimonda.playSong(3));
+raimonda.playSong(3);
 // Playing song: Kai grazumo.
 
 console.log(raimonda.playlist());
