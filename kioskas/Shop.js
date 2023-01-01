@@ -7,9 +7,7 @@ class Shop {
   }
 
   intro() {
-    console.log(
-      `Hi we are "${this.name}".\nUse .items() method to get list of items to purchase.\nUse .order() method to get your order details.`
-    );
+    console.log(`Hi we are "${this.name}".\nUse .items() method to get list of items to purchase.\nUse .order() method to get your order details.`);
   }
 
   items() {
@@ -166,9 +164,7 @@ class Shop {
     console.log("Orders completed:", ordersCompleted);
     console.log("Orders in progress:", ordersInProgress);
     console.log(`Profit: ${(profit / 100).toFixed(2)} ${this.currency}`);
-    console.log(
-      `Possible profit: ${(possibleProfit / 100).toFixed(2)} ${this.currency}`
-    );
+    console.log(`Possible profit: ${(possibleProfit / 100).toFixed(2)} ${this.currency}`);
     console.log("====================");
   }
 }

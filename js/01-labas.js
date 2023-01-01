@@ -8,3 +8,5 @@ console.log('Laba diena');
     eilučių 
     komentaras
 */
+console.log("testas")
+
