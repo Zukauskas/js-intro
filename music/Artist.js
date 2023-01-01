@@ -21,5 +21,20 @@ class Artist {
 		const newSong = {name: songName, timesPlayed: 0};
 		this.songList.push(newSong)
 	}
+
+	playlist() {
+		console.log(`${this.name}'s playlist:`);
+		console.log('===========================')
+	for (const [index,song] of this.songList.entries()) {
+		console.log(`${index + 1}. ${song.name} (${song.timesPlayed})`)
+		}
+
+	}
+
+	playSong(songPlace){
+
+	
+	}
 }
+
 export { Artist }
