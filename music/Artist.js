@@ -34,11 +34,20 @@ class Artist {
 	playSong(songPlace){
 		for (const [index,song] of this.songList.entries()){
 			if (index === songPlace){
-				song.timesPlayed++ 
+				song.timesPlayed++
+				console.log(`Playing song: ${song.name}`)
 			}
 		
 		}
 			
+	}
+
+	fortune() {
+		let artistFortune = 0;
+		for (const song of this.songList){
+			artistFortune += this.price * song.timesPlayed
+		}
+		console.log(`Total lifetime wealth of ${this.name} is ${artistFortune} ${this.currency}`)
 	}
 }
 
