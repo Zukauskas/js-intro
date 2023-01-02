@@ -45,6 +45,7 @@
   "author": "Tautvydas",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "standard": "^16.0.3"
   }
 }
