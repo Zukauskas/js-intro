@@ -4,6 +4,7 @@ class Artist {
 		this.name = name;
 		this.currency = currency;
 		this.songList = [];
+		this.moneyBag = 0;
 	}
 
 	intro() {
@@ -35,6 +36,7 @@ class Artist {
 		for (const [index,song] of this.songList.entries()){
 			if (index === songPlace){
 				song.timesPlayed++
+				this.moneyBag += this.price
 				console.log(`Playing song: ${song.name}`)
 			}
 		
@@ -43,11 +45,8 @@ class Artist {
 	}
 
 	fortune() {
-		let artistFortune = 0;
-		for (const song of this.songList){
-			artistFortune += this.price * song.timesPlayed
-		}
-		console.log(`Total lifetime wealth of ${this.name} is ${artistFortune} ${this.currency}`)
+		
+		console.log(`Total lifetime wealth of ${this.name} is ${this.moneyBag} ${this.currency}`)
 	}
 }
 
