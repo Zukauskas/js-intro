@@ -296,9 +296,9 @@
 //     console.log("Bandykite dar kartą");
 // }
 
-console.clear();
-console.log("----------FOR LOOP---------------");
-console.log("");
+console.clear()
+console.log('----------FOR LOOP---------------')
+console.log('')
 
 /*
 Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
@@ -311,79 +311,79 @@ Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
 
  */
 
-function addNumbersInRange(number1, number2) {
-    //parametru validacija
-    if (typeof number1 !== "number") {
-        return console.log("ERROR - pirmasis parametras nera skaicius");
-    }
+function addNumbersInRange (number1, number2) {
+  // parametru validacija
+  if (typeof number1 !== 'number') {
+    return console.log('ERROR - pirmasis parametras nera skaicius')
+  }
 
-    if (typeof number2 !== "number") {
-        return console.log("ERROR - antras parametras nera skaicius");
-    }
+  if (typeof number2 !== 'number') {
+    return console.log('ERROR - antras parametras nera skaicius')
+  }
 
-    if (!isFinite(number1)) {
-        return console.log("ERROR - pirmasis parametras turi buti normalus skaicius");
-    }
+  if (!isFinite(number1)) {
+    return console.log('ERROR - pirmasis parametras turi buti normalus skaicius')
+  }
 
-    if (!isFinite(number2)) {
-        return console.log("ERROR - antras parametras turi buti normalus skaicius");
-    }
+  if (!isFinite(number2)) {
+    return console.log('ERROR - antras parametras turi buti normalus skaicius')
+  }
 
-    if (number1 % 1 !== 0) {
-        return console.log("ERROR - pirmasis parametras turi buti sveikas skaicius");
-    }
+  if (number1 % 1 !== 0) {
+    return console.log('ERROR - pirmasis parametras turi buti sveikas skaicius')
+  }
 
-    if (number2 % 1 !== 0) {
-        return console.log("ERROR - antras parametras turi buti sveikas skaicius");
-    }
+  if (number2 % 1 !== 0) {
+    return console.log('ERROR - antras parametras turi buti sveikas skaicius')
+  }
 
-    //LOGIKA
-    let sum = 0;
-    if (number1 < number2) {
-        for (let i = number1; i <= number2; i++) {
-            sum += i;
-        }
+  // LOGIKA
+  let sum = 0
+  if (number1 < number2) {
+    for (let i = number1; i <= number2; i++) {
+      sum += i
     }
+  }
 
-    if (number1 > number2) {
-        for (let i = number2; i <= number1; i++) {
-            sum += i;
-        }
+  if (number1 > number2) {
+    for (let i = number2; i <= number1; i++) {
+      sum += i
     }
+  }
 
-    if (number1 === number2) {
-        sum += number1;
-    }
+  if (number1 === number2) {
+    sum += number1
+  }
 
-    console.log(`Adding all numbers in range from ${number1} to ${number2} equals: ${sum}.`);
+  console.log(`Adding all numbers in range from ${number1} to ${number2} equals: ${sum}.`)
 }
 
-addNumbersInRange(0, 0);
-addNumbersInRange(0, 4);
-addNumbersInRange(0, 100);
-addNumbersInRange(574, 815);
-addNumbersInRange(-50, 50);
-addNumbersInRange(-70, 30);
+addNumbersInRange(0, 0)
+addNumbersInRange(0, 4)
+addNumbersInRange(0, 100)
+addNumbersInRange(574, 815)
+addNumbersInRange(-50, 50)
+addNumbersInRange(-70, 30)
 
-console.log("--------REVERSED RANGE--------");
+console.log('--------REVERSED RANGE--------')
 
-addNumbersInRange(0, 0);
-addNumbersInRange(4, 0);
-addNumbersInRange(100, 0);
-addNumbersInRange(815, 574);
-addNumbersInRange(50, -50);
-addNumbersInRange(30, -70);
+addNumbersInRange(0, 0)
+addNumbersInRange(4, 0)
+addNumbersInRange(100, 0)
+addNumbersInRange(815, 574)
+addNumbersInRange(50, -50)
+addNumbersInRange(30, -70)
 
-console.log("----------------INVALID RANGES-------------------");
-addNumbersInRange("Labas", 10);
-addNumbersInRange(10, "Labas");
-addNumbersInRange("Labas", "rytas");
-addNumbersInRange(2.5, 10);
-addNumbersInRange(Infinity, 10);
-addNumbersInRange(NaN, 10);
-addNumbersInRange(10, null);
+console.log('----------------INVALID RANGES-------------------')
+addNumbersInRange('Labas', 10)
+addNumbersInRange(10, 'Labas')
+addNumbersInRange('Labas', 'rytas')
+addNumbersInRange(2.5, 10)
+addNumbersInRange(Infinity, 10)
+addNumbersInRange(NaN, 10)
+addNumbersInRange(10, null)
 
-console.log("--------------------------------");
+console.log('--------------------------------')
 
 /*
 
@@ -398,39 +398,39 @@ pvz.: “abcdef” -> “fedcba”
 //     reversedString += normalString[i];
 // }
 // console.log("Normal string:", normalString, "Reversed String:", reversedString);
-console.clear();
+console.clear()
 
 // MAKE IT A FUNCTION
 
-function stringReverse(string) {
-    if (typeof string !== "string") {
-        return `KLAIDA: Duok string, o ne ${typeof string}`;
-    }
+function stringReverse (string) {
+  if (typeof string !== 'string') {
+    return `KLAIDA: Duok string, o ne ${typeof string}`
+  }
 
-    let reversedString = "";
+  let reversedString = ''
 
-    // 1) eiti is teksto galo, imti simboli ir lipdyti nauja teksta
-    // for (let i = string.length - 1; i >= 0; i--) {
-    //     reversedString += string[i];
-    // }
-    // return reversedString;
+  // 1) eiti is teksto galo, imti simboli ir lipdyti nauja teksta
+  // for (let i = string.length - 1; i >= 0; i--) {
+  //     reversedString += string[i];
+  // }
+  // return reversedString;
 
-    // // 2) eiti is teksto priekio, imti simboli is galo
-    // for (let i = 0; i < string.length; i++) {
-    //     reversedString += string[string.length - 1 - i];
-    // }
-    // return reversedString;
+  // // 2) eiti is teksto priekio, imti simboli is galo
+  // for (let i = 0; i < string.length; i++) {
+  //     reversedString += string[string.length - 1 - i];
+  // }
+  // return reversedString;
 
-    // 3) eiti is teksto priekio, imti simboli is priekio
-    for (let i = 0; i < string.length; i++) {
-        reversedString = string[i] + reversedString;
-    }
-    return reversedString;
+  // 3) eiti is teksto priekio, imti simboli is priekio
+  for (let i = 0; i < string.length; i++) {
+    reversedString = string[i] + reversedString
+  }
+  return reversedString
 }
 
-//TESTAI
-console.log(stringReverse("azerty"));
-console.log(stringReverse("qwrty"));
+// TESTAI
+console.log(stringReverse('azerty'))
+console.log(stringReverse('qwrty'))
 // console.log(stringReverse(12345));
 // console.log(stringReverse(Infinity));
 // console.log(stringReverse(""));
@@ -438,4 +438,4 @@ console.log(stringReverse("qwrty"));
 // console.log(stringReverse([5]));
 // console.log(stringReverse(function () {}));
 
-console.log("-----------------------------------");
+console.log('-----------------------------------')

@@ -1,12 +1,11 @@
-console.log(777);
-console.log('Laba diena');
+console.log(777)
+console.log('Laba diena')
 
 // vienos eilutės komentaras
 
-/* 
+/*
     kelių
-    eilučių 
+    eilučių
     komentaras
 */
-console.log("testas")
-
+console.log('testas')

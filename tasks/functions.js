@@ -1,7 +1,7 @@
-console.clear();
+console.clear()
 
-console.log("#####FUNKCIJOS#####");
-console.log("");
+console.log('#####FUNKCIJOS#####')
+console.log('')
 
 // /* Funkcija pavadinimu “tusciaFunkcija”:
 //     nepriima jokių kintamųjų
@@ -96,79 +96,79 @@ console.log("");
 // console.log(skaitmenuKiekisSkaiciuje(NaN));
 // // rezultatas: “Pateikta netinkamo tipo reikšmė.”
 
-console.log("--------------------------------------");
-/* 
+console.log('--------------------------------------')
+/*
 Pirmas skaicius:
     isFinite
     yra typeof === "number"
 
 */
 
-function isValidNumber(numbersArray) {
-    for (let i = 0; i < numbersArray.length; i++) {
-        if (typeof numbersArray[i] === "number" && isFinite(numbersArray[i])) {
-            return numbersArray[i];
-        }
+function isValidNumber (numbersArray) {
+  for (let i = 0; i < numbersArray.length; i++) {
+    if (typeof numbersArray[i] === 'number' && isFinite(numbersArray[i])) {
+      return numbersArray[i]
     }
-    return "KLAIDA: Masyve nėra tinkamų skaičių";
+  }
+  return 'KLAIDA: Masyve nėra tinkamų skaičių'
 }
 
-function biggestNumber(numbersArray) {
-    if (!Array.isArray(numbersArray)) {
-        return "KLAIDA: reikia masyvo";
-    }
-    if (numbersArray.length < 1) {
-        return "KLAIDA: masyvas negali buti tuscias";
+function biggestNumber (numbersArray) {
+  if (!Array.isArray(numbersArray)) {
+    return 'KLAIDA: reikia masyvo'
+  }
+  if (numbersArray.length < 1) {
+    return 'KLAIDA: masyvas negali buti tuscias'
+  }
+
+  let biggest = isValidNumber(numbersArray)
+
+  for (let i = 0; i < numbersArray.length; i++) {
+    if (!isFinite(numbersArray[i]) || typeof numbersArray[i] !== 'number') {
+      continue
     }
 
-    let biggest = isValidNumber(numbersArray);
-
-    for (let i = 0; i < numbersArray.length; i++) {
-        if (!isFinite(numbersArray[i]) || typeof numbersArray[i] !== "number") {
-            continue;
-        }
-
-        if (biggest < numbersArray[i]) {
-            biggest = numbersArray[i];
-        }
+    if (biggest < numbersArray[i]) {
+      biggest = numbersArray[i]
     }
-    return biggest;
+  }
+  return biggest
 }
 
-console.log(biggestNumber("pomidoras"));
-console.log(biggestNumber(true));
-console.log(biggestNumber());
-console.log(biggestNumber(5));
-console.log(biggestNumber(function () {}));
-console.log(biggestNumber(null));
-console.log(biggestNumber({}));
-console.log(biggestNumber([]));
+console.log(biggestNumber('pomidoras'))
+console.log(biggestNumber(true))
+console.log(biggestNumber())
+console.log(biggestNumber(5))
+console.log(biggestNumber(function () {}))
+console.log(biggestNumber(null))
+console.log(biggestNumber({}))
+console.log(biggestNumber([]))
 
-console.log(biggestNumber([0]), "-->", 0);
-console.log(biggestNumber([1, 2, 3]), "-->", 3);
-console.log(biggestNumber([-5, 78, 14, 0, 18]), "-->", 78);
-console.log(biggestNumber([69, 69, 69, 69, 66]), "-->", 69);
-console.log(biggestNumber([-1, -2, -3, -4, -5, -6, -7, -8]), "-->", -1);
+console.log(biggestNumber([0]), '-->', 0)
+console.log(biggestNumber([1, 2, 3]), '-->', 3)
+console.log(biggestNumber([-5, 78, 14, 0, 18]), '-->', 78)
+console.log(biggestNumber([69, 69, 69, 69, 66]), '-->', 69)
+console.log(biggestNumber([-1, -2, -3, -4, -5, -6, -7, -8]), '-->', -1)
 
-console.log(biggestNumber([1, 2, 3, Infinity]), "-->", 3);
-console.log(biggestNumber([1, 2, Infinity, 3]), "-->", 3);
-console.log(biggestNumber([1, Infinity, 2, 3]), "-->", 3);
-console.log(biggestNumber([Infinity, 1, 2, 3]), "-->", 3);
+console.log(biggestNumber([1, 2, 3, Infinity]), '-->', 3)
+console.log(biggestNumber([1, 2, Infinity, 3]), '-->', 3)
+console.log(biggestNumber([1, Infinity, 2, 3]), '-->', 3)
+console.log(biggestNumber([Infinity, 1, 2, 3]), '-->', 3)
 
-console.log(biggestNumber([1, 2, 3, NaN]), "-->", 3);
-console.log(biggestNumber([1, 2, NaN, 3]), "-->", 3);
-console.log(biggestNumber([1, NaN, 2, 3]), "-->", 3);
-console.log(biggestNumber([NaN, 1, 2, 3]), "-->", 3);
+console.log(biggestNumber([1, 2, 3, NaN]), '-->', 3)
+console.log(biggestNumber([1, 2, NaN, 3]), '-->', 3)
+console.log(biggestNumber([1, NaN, 2, 3]), '-->', 3)
+console.log(biggestNumber([NaN, 1, 2, 3]), '-->', 3)
 
-console.log(biggestNumber([1, 2, 3, true]), "-->", 3);
-console.log(biggestNumber([1, 2, true, 3]), "-->", 3);
-console.log(biggestNumber([1, true, 2, 3]), "-->", 3);
-console.log(biggestNumber([true, 0, -1, -2]), "-->", 0);
+console.log(biggestNumber([1, 2, 3, true]), '-->', 3)
+console.log(biggestNumber([1, 2, true, 3]), '-->', 3)
+console.log(biggestNumber([1, true, 2, 3]), '-->', 3)
+console.log(biggestNumber([true, 0, -1, -2]), '-->', 0)
 
-console.log(biggestNumber([1, 2, 3, "true"]), "-->", 3);
-console.log(biggestNumber([1, 2, "true", 3]), "-->", 3);
-console.log(biggestNumber([1, "true", 2, 3]), "-->", 3);
-console.log(biggestNumber(["true", 0, -1, -2]), "-->", 0);
+console.log(biggestNumber([1, 2, 3, 'true']), '-->', 3)
+console.log(biggestNumber([1, 2, 'true', 3]), '-->', 3)
+console.log(biggestNumber([1, 'true', 2, 3]), '-->', 3)
+console.log(biggestNumber(['true', 0, -1, -2]), '-->', 0)
 
-console.log(biggestNumber(["true", true, NaN, [], [5], Infinity, -Infinity, 0]), "-->", 0);
-console.log(biggestNumber(["true", true, NaN, [], [5], Infinity, -Infinity]));
+console.log(biggestNumber(['true', true, NaN, [], [5], Infinity, -Infinity, 0]), '-->', 0)
+console.log(biggestNumber(['true', true, NaN, [], [5], Infinity, -Infinity]))

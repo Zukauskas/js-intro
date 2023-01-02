@@ -1,62 +1,62 @@
 class Student {
-  #name = "";
-  #birthYear = 0;
-  #isMarried = false;
-  #shoes = 40;
-  #marks = [];
+  #name = ''
+  #birthYear = 0
+  #isMarried = false
+  #shoes = 40
+  #marks = []
 
-  constructor() {
-    this.#name = "Petras";
-    this.#birthYear = 0;
-    this.#isMarried = false;
-    this.#shoes = 40;
-    this.#marks = [];
+  constructor () {
+    this.#name = 'Petras'
+    this.#birthYear = 0
+    this.#isMarried = false
+    this.#shoes = 40
+    this.#marks = []
   }
 
-  getName() {
-    return this.#name;
+  getName () {
+    return this.#name
   }
 
-  isValidMark(mark) {
+  isValidMark (mark) {
     if (
-      typeof mark !== "number" ||
+      typeof mark !== 'number' ||
       !isFinite(mark) ||
       mark < 1 ||
       mark > 10 ||
       mark % 1 !== 0
     ) {
-      return false;
+      return false
     }
-    return true;
+    return true
   }
 
-  //Metodas itraukiantis nauja pazymi
-  addMark(mark) {
+  // Metodas itraukiantis nauja pazymi
+  addMark (mark) {
     if (!this.isValidMark(mark)) {
-      return "ERROR";
+      return 'ERROR'
     }
 
-    this.#marks.push(mark);
+    this.#marks.push(mark)
 
-    return "OK";
+    return 'OK'
   }
 
-  addMarks(...marks) {
+  addMarks (...marks) {
     for (const mark of marks) {
       if (!this.isValidMark(mark)) {
-        continue;
+        continue
       }
-      this.#marks.push(mark);
+      this.#marks.push(mark)
     }
   }
 
-  marksAverage() {
+  marksAverage () {
     if (this.#marks.length === 0) {
-      return "neiskaita";
+      return 'neiskaita'
     }
 
-    return this.#marks.reduce((t, m) => t + m, 0) / this.#marks.length;
+    return this.#marks.reduce((t, m) => t + m, 0) / this.#marks.length
   }
 }
 
-export { Student };
+export { Student }

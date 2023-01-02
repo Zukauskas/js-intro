@@ -1,4 +1,4 @@
-/* 
+/*
 
 priima du kintamuosius:
 pirmasis nurodo tekstą, su kuriuo reikės atlikti užduotį
@@ -22,44 +22,44 @@ išrenkame iš nurodyto teksto kas kelintą raidę (pagal antrojo kintamojo žin
 išrinktas raides sudėti į atskirą kintamąjį, kuris yra teksto tipo
 gražina rezultatą
 */
-console.clear();
-function isrinktiRaides(string, whichLetters) {
-    if (typeof string !== "string") {
-        return console.log("Pirmasis kintamasis yra netinkamo tipo.");
-    }
-    if (string.length === 0 || string.length > 100) {
-        return console.log("Pirmas kintamasis yra netinkamo dydžio");
-    }
-    if (typeof whichLetters !== "number") {
-        return console.log("Antras kintamasis yra netinkamo tipo");
-    }
-    if (whichLetters <= 0) {
-        return console.log("Antrasis kintamasis turi būti didesnis už nulį.");
-    }
-    if (whichLetters > string.length) {
-        return console.log("Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgi");
-    }
-    if (whichLetters % 1 !== 0) {
-        return console.log("Antrasis kintamasis turi buti sveikas skaicius");
-    }
-    let newString = "";
-    for (i = whichLetters - 1; i < string.length; i += whichLetters) {
-        newString += string[i];
-    }
-    console.log(newString);
+console.clear()
+function isrinktiRaides (string, whichLetters) {
+  if (typeof string !== 'string') {
+    return console.log('Pirmasis kintamasis yra netinkamo tipo.')
+  }
+  if (string.length === 0 || string.length > 100) {
+    return console.log('Pirmas kintamasis yra netinkamo dydžio')
+  }
+  if (typeof whichLetters !== 'number') {
+    return console.log('Antras kintamasis yra netinkamo tipo')
+  }
+  if (whichLetters <= 0) {
+    return console.log('Antrasis kintamasis turi būti didesnis už nulį.')
+  }
+  if (whichLetters > string.length) {
+    return console.log('Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgi')
+  }
+  if (whichLetters % 1 !== 0) {
+    return console.log('Antrasis kintamasis turi buti sveikas skaicius')
+  }
+  let newString = ''
+  for (i = whichLetters - 1; i < string.length; i += whichLetters) {
+    newString += string[i]
+  }
+  console.log(newString)
 }
 
-isrinktiRaides("abcdefg", 2);
-isrinktiRaides("abcdefghijkl", 3);
-isrinktiRaides("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", 4);
-isrinktiRaides("abc", 0);
-isrinktiRaides("abc", 4);
-isrinktiRaides(1561, 2);
-isrinktiRaides("Infinity", NaN);
-isrinktiRaides(Infinity, "NaN");
-isrinktiRaides("Infinity", Infinity);
-isrinktiRaides(NaN, 5);
-isrinktiRaides("Infinity", 2.5);
-isrinktiRaides("Infinity", null);
-isrinktiRaides(null, "NaN");
-isrinktiRaides("Infinity", -5);
+isrinktiRaides('abcdefg', 2)
+isrinktiRaides('abcdefghijkl', 3)
+isrinktiRaides('abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz', 4)
+isrinktiRaides('abc', 0)
+isrinktiRaides('abc', 4)
+isrinktiRaides(1561, 2)
+isrinktiRaides('Infinity', NaN)
+isrinktiRaides(Infinity, 'NaN')
+isrinktiRaides('Infinity', Infinity)
+isrinktiRaides(NaN, 5)
+isrinktiRaides('Infinity', 2.5)
+isrinktiRaides('Infinity', null)
+isrinktiRaides(null, 'NaN')
+isrinktiRaides('Infinity', -5)

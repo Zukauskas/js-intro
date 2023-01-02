@@ -1,5 +1,5 @@
-console.clear();
-/* 
+console.clear()
+/*
 
 You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
 
@@ -16,7 +16,7 @@ You are going to be given a word. Your job is to return the middle character of 
 
 console.log(getMiddle("tetst"), "-->", "es");
  */
-/* 
+/*
 function maskify(cc) {
     if (cc.length <= 4) {
         return cc;
@@ -34,7 +34,7 @@ console.log(maskify("4556364607935616"), "############5616");
 console.log(maskify("1"), "1");
 console.log(maskify("11111"), "#1111");
  */
-/* 
+/*
 function isTriangle(a, b, c) {
     return !(a >= b + c || b >= a + c || c >= a + b);
 }
@@ -58,7 +58,7 @@ function diamond(n) {
 
 console.log(diamond(99));
  */
-/* 
+/*
 console.clear();
 function nbDig(n, d) {
     const reg = new RegExp(`${d}`, "g");
@@ -76,7 +76,7 @@ console.log(nbDig(5750, 0), 4700, "n = 5750, d = 0"); */
 console.log(string.split("").map((a) => (a === "0" ? "O" : a === "1" ? "I" : a === "5" ? "S" : a)));
  */
 
-//Your job is to write a function which increments a string, to create a new string.
+// Your job is to write a function which increments a string, to create a new string.
 
 // If the string already ends with a number, the number should be incremented by 1.
 // If the string does not end with a number. the number 1 should be appended to the new string.
@@ -108,16 +108,16 @@ console.log(string.split("").map((a) => (a === "0" ? "O" : a === "1" ? "I" : a =
     return onlyString + newNum
   }
 
-  console.log(incrementString("foo00999")) 
+  console.log(incrementString("foo00999"))
 
  */
 
-function oddCount(n) {
+function oddCount (n) {
   if (!isFinite(n)) {
-    return 0;
+    return 0
   }
-  console.log(n);
-  return Array.from({ length: n }).filter((a) => a % 2 !== 0);
+  console.log(n)
+  return Array.from({ length: n }).filter((a) => a % 2 !== 0)
 }
 
-console.log(oddCount(7102150311246421));
+console.log(oddCount(7102150311246421))
