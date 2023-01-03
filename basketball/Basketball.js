@@ -3,13 +3,17 @@ class Basketball {
         this.league = league;
         this.teamSize = teamSize;
         this.players = [];
+        this.teams = [];
     }
 
     wannaBePlayer(player, costPerYear) {
-        const newPlayer = {name: player, cost: costPerYear}
-        this.players.push(newPlayer)
+        const newPlayer = { name: player, cost: costPerYear };
+        this.players.push(newPlayer);
     }
 
+    createTeam(teamName) {
+        const newTeam = { name: teamName, players: [] };
+        this.teams.push(newTeam);
+    }
 }
-
-export { Basketball }
+export { Basketball };
