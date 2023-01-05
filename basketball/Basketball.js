@@ -3,6 +3,7 @@ class Basketball {
         this.league = league;
         this.teamSize = teamSize;
         this.gamesPlayed = 0;
+        this.currentGame = [];
         this.players = [];
         this.teams = [];
     }
@@ -13,7 +14,7 @@ class Basketball {
     }
 
     createTeam(teamName) {
-        const newTeam = { name: teamName, players: [] };
+        const newTeam = { name: teamName, players: [], wins: 0 };
         this.teams.push(newTeam);
     }
 
@@ -45,7 +46,18 @@ class Basketball {
         const firstTeamName = this.teams[firstTeam - 1].name;
         const secondTeamName = this.teams[secondTeam - 1].name;
         console.log(`New game everybody!\n"${firstTeamName}" vs. "${secondTeamName}"`)
+        this.currentGame = [this.teams[firstTeam - 1], this.teams[secondTeam - 1]]
         this.gamesPlayed++
+    }
+
+    score(firstTeamScore, secondTeamScore) {
+        if (firstTeamScore > secondTeamScore) {
+            console.log(`"${this.currentGame[0].name}" wins!`)
+            this.currentGame[0].wins++
+        } else {
+            console.log(`"${this.currentGame[1].name}" wins!`)
+            this.currentGame[1].wins++
+        }
     }
 
 }
