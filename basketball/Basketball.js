@@ -60,5 +60,15 @@ class Basketball {
         }
     }
 
+    seasonSummary() {
+        const winners = this.teams[0].wins > this.teams[1].wins ? this.teams[0].name : this.teams[1].name;
+        console.log(`Season summary for "${this.league}" ${this.teamSize}x${this.teamSize} league:`)
+        console.log('####################');
+        console.log(`Total games played: ${this.gamesPlayed}`);
+        console.log(`Winner team: "${winners}"`)
+        console.log('####################');
+    }
+
+
 }
 export { Basketball };
