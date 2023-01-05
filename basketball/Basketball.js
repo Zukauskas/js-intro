@@ -2,6 +2,7 @@ class Basketball {
     constructor(league, teamSize) {
         this.league = league;
         this.teamSize = teamSize;
+        this.gamesPlayed = 0;
         this.players = [];
         this.teams = [];
     }
@@ -38,6 +39,13 @@ class Basketball {
         }
 
         console.log(`"${team.name}" team is paying ${value} cast/year for it's players.`)
+    }
+
+    letsPlay(firstTeam, secondTeam) {
+        const firstTeamName = this.teams[firstTeam - 1].name;
+        const secondTeamName = this.teams[secondTeam - 1].name;
+        console.log(`New game everybody!\n"${firstTeamName}" vs. "${secondTeamName}"`)
+        this.gamesPlayed++
     }
 
 }
